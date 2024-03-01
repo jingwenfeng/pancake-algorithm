@@ -1,0 +1,21 @@
+#
+# Code written by Jingwen Feng 02/28/2024. All rights reserved.
+#
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Pancake Stack</title>
+</head>
+<body>
+    <h1>Input Pancake Stack</h1>
+    <form method="post">
+        Enter your pancake stack (separated by spaces, e.g., "10 9 8 7 6 5 4 1 3 2") or press Enter use the default:
+        <input type="text" name="stack" placeholder="Enter your stack">
+        <button type="submit">Submit</button>
+    </form>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>

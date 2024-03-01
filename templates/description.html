@@ -1,0 +1,76 @@
+#
+# Code written by Jingwen Feng 02/28/2024. All rights reserved.
+#
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Description</title>
+</head>
+<body>
+    <h1>Welcome to the Pancake Sorting Algorithm Simulator</h1>
+    <a href="/simulate">Try the algorithm</a>
+    <h1>1. Searching Problem</h1>
+    <h2>State Space S:</h2>
+    <p>The set of all possible arrangements of the pancakes. Each state s is a permutation of the stack [p1, p2, p3 ... p10]. pi is the size of ith pancake from top.</p>
+
+    <h2>Initial State S0:</h2>
+    <p>The original disordered list (permutation) of pancakes. For example: [3, 6, 7, 2, 5, 4, 9, 10, 1, 8]</p>
+
+    <h2>Action A:</h2>
+    <p>The set of action A = [a1, a2, a3 ... a9], where ai is the action that inserted under ith pancake in the stack and used to flip all pancakes above it. (a10 is just flipping the whole set, so I only set to a9).</p>
+
+    <h2>Transition Function T:</h2>
+    <p>T(s,a) -> s' returns new stack (new permutation) of pancakes Goal s*: permutation [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</p>
+
+    <h2>Cost Function g(i):</h2>
+    <p>g(i) = total flips from initial state to state i.</p>
+
+    <h1>2. Possible Cost Function (Backward Cost)</h1>
+    <p>Ci = total flips from initial state to state i. If from initial state to state i has actions [ai], 1<i<k Ci = k</p>
+
+    <h1>3. Possible Heuristic Function (Forward Cost)</h1>
+    <p>h(n) = Number of pancakes that are not in the correct descending order, ignoring the bottom pancake if it's correctly placed.</p>
+
+    <h1>4. Coding:</h1>
+    <p>For UCS, f(n) = g(n) For A*; f(n) = g(n) + h(n)</p>
+
+    <h2>How to use the code:</h2>
+    <p>In terminal, enter main.py<br>
+    Do you want to input your own pancake stack? YES/NO:<br>
+    if YES, enter own set such as '1 2 3 4 5 6 7 8 9 10'<br>
+    if NO, use default set.<br>
+    The result show:<br>
+    A*: solution set, steps, time and space<br>
+    ucs: solution set, steps, time and space</p>
+
+    <h3>For set [1 3 5 2 4 6]:</h3>
+    <p>A*<br>
+    running time: 0.011997461318969727<br>
+    Space: 531</p>
+
+    <p>UCS:<br>
+    running Time: 0.010999917984008789<br>
+    Space: 1278</p>
+
+    <h3>For set [1 3 4 2]:</h3>
+    <p>A*<br>
+    running time: 0.0<br>
+    Space: 25</p>
+
+    <p>UCS:<br>
+    running Time: 0.0<br>
+    Space: 17</p>
+
+    <h2>Coding 2:</h2>
+    <p>Use the webpage:<br>
+    In terminal run:<br>
+    pip install flask<br>
+    then run:<br>
+    app2.py<br>
+    click on the http://<br>
+    enter the set and get result<br>
+    To exist, enter [Control C]
+
+</body>
+</html>
